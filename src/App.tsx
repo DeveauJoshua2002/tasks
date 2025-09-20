@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
 
+import { Button } from "react-bootstrap";
+
 function App(): React.JSX.Element {
     return (
         <div className="App">
@@ -17,6 +19,10 @@ function App(): React.JSX.Element {
                 <li>Second list</li>
                 <li>Third list</li>
             </ul>
+
+            <Button onClick={() => console.log("Hello World!")}>
+                Log Hello World
+            </Button>
 
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
