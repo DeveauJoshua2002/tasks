@@ -3,6 +3,9 @@ import "./App.css";
 
 import { Button } from "react-bootstrap";
 
+{/*Create a variable called local image. Have it point to the Image folder*/}
+import localImage from "./Images/Dog_PNG_Clip_Art_Image.png";
+
 function App(): React.JSX.Element {
     return (
         <div className="App">
@@ -11,8 +14,8 @@ function App(): React.JSX.Element {
             </header>
             
             <h1>This is a header</h1>
-
-            <img src="" />
+            {/*Add Image give it Alt text*/}
+            <img src={localImage} alt="A picture of a dog" />
             
             <ul>
                 <li>First list</li>
