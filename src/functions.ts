@@ -34,7 +34,7 @@ export function add3(first: number, second: number, third: number): number {
  * mark added to the end.
  */
 export function shout(message: string): string {
-    return "";
+    return message.toUpperCase() + "!"; //Found documentation for uppercase method: https://www.geeksforgeeks.org/typescript/typescript-string-touppercase-method/
 }
 
 /**
@@ -42,7 +42,8 @@ export function shout(message: string): string {
  * mark. Do not use an `if` statement in solving this question.
  */
 export function isQuestion(message: string): boolean {
-    return true;
+    //Found documentation for returning a boolean: https://www.geeksforgeeks.org/typescript/typescript-string-endswith-method/
+    return message.endsWith("?"); //Will return true if it has a question mark and false without it. No if statment required
 }
 
 /**
