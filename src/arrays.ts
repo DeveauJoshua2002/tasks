@@ -142,7 +142,23 @@ export function injectPositive(values: number[]): number[] {
     }
     //If a negative number is found
     else {
-        //Do something else
+        const BeforeValues = values.slice(0, FindNegative); //Cut off before values from first index to the first negative number
+
+        //Now we need to get the summation of BeforeValues
+
+        //Same logic idea as before
+        const SumBeforeValues = BeforeValues.reduce((accumulation : number, current : number) => accumulation + current, 0);
+
+        //Now we need to copy the original array before we change it
+
+        const result = [...values];
+
+        //We find the negative value
+        //Then add the added value right after
+        //And don't remove anything
+        result.splice(FindNegative + 1, 0, SumBeforeValues)
+
+        return result; //Return result, should work
     }
 
     //There's more to do at the end but I need to start here.
