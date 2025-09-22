@@ -85,16 +85,11 @@ export function countShortWords(words: string[]): number {
  */
 export function allRGB(colors: string[]): boolean {
 
-    /*
-    Psuedo code:
-
-    return(colors === red || colors === blue || colors === green);
-
-    I think this can work. Just need to find something to check through all the colors.
-    And if it doesn't match the return statment it fails.
-    */
-
-    return false;
+    //Found what I was looking for: https://www.geeksforgeeks.org/javascript/javascript-array-every-method/
+    return colors.every( //Will return if every color is red green or blue, else false
+        (color : string) =>
+            color === "red" || color === "blue" || color === "green" 
+    );
 }
 
 /**
