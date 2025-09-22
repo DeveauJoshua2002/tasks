@@ -131,11 +131,16 @@ export function injectPositive(values: number[]): number[] {
 
     //Now there are two scenarios, 1 find if there's a negative number, 2 do something different if no negative number
 
-    const FindNegative = 0;
+    const FindNegative = values.findIndex((value : number) => value < 0); //Find the first negative indexed number
 
+    //If no negative numbers were found
     if (FindNegative === -1){
-        //Do something
+        //Use .reduce() just like last question and create a value called summation
+        //Accumulation stands for the growing value while current is current value, and it starts at 0
+        const summation = values.reduce((accumulation : number, current : number) => accumulation + current, 0);
+        return [...values, summation]; //Unpack all the values and add the total to the end
     }
+    //If a negative number is found
     else {
         //Do something else
     }
