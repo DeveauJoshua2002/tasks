@@ -115,7 +115,7 @@ export function makeMath(addends: number[]): string {
     const equation = addends.join("+");
 
     //Add both summation and equation into one big string
-    return '${summation}=%{equation}';
+    return `${summation}=${equation}`;
 }
 
 /**
