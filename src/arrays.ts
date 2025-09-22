@@ -5,7 +5,14 @@
  * the number twice.
  */
 export function bookEndList(numbers: number[]): number[] {
-    return numbers;
+    if (numbers.length === 0){
+        return []; //If no elements return empty array
+    }
+    if (numbers.length === 1){
+        return [numbers[0], numbers[0]]; //If just one element return numbers twice
+    }
+    //Since it starts at 0 to get last element subtract by 1
+    return [numbers[0], numbers[numbers.length -1]]; //Else return first number and last number
 }
 
 /**
