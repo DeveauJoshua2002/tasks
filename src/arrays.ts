@@ -73,9 +73,9 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    //Need to filter less then 4
-    const ShortWords = words < 4; //Still in progress need to think
-    return ShortWords.length; //Should be end result, still need to debug and think
+
+    const ShortWords = words.filter((word : string) => word.length < 4); //Use .filter and check if word.length is < 4
+    return ShortWords.length; //Return word length
 }
 
 /**
@@ -84,6 +84,16 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
+
+    /*
+    Psuedo code:
+
+    return(colors === red || colors === blue || colors === green);
+
+    I think this can work. Just need to find something to check through all the colors.
+    And if it doesn't match the return statment it fails.
+    */
+
     return false;
 }
 
