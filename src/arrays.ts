@@ -104,7 +104,16 @@ export function makeMath(addends: number[]): string {
     if (addends.length === 0){
         return "0=0";
     }
-    return "";
+
+    //First need to resize array into one value
+
+    const summation = 0;
+
+    //Next need to have the right hand side with "+" values
+
+    const equation = 0;
+
+    return 'summation=equation'; //Something like this but this will obviously change
 }
 
 /**
