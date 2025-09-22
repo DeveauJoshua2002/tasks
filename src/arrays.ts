@@ -25,11 +25,16 @@ export function tripleNumbers(numbers: number[]): number[] {
 }
 
 /**
- * Consume an array of strings and convert them to integers. If
+ * Consume an array of strincgs and convert them to integers. If
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
-    return [];
+    return numbers.map((str: string) => {
+        //Found a way to change a string to an int: https://www.geeksforgeeks.org/java/how-to-convert-string-to-int-in-java/
+        const value = parseInt(str);
+        //If parseInt failed (Meaning not an integer) return 0
+        return isNaN(value) ? 0 : value;
+    });
 }
 
 /**
@@ -40,7 +45,12 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return [];
+    return amounts.map((amount: string) =>{
+        //If the $ exists remove it
+        const RemovedDollar = amount.startsWith("$") ? amount.slice(1) : amount;
+        const value = parseInt(RemovedDollar);  //Turn string into integer
+        return isNaN(value) ? 0 : value; //If it's not an integer return 0
+    });
 };
 
 /**
