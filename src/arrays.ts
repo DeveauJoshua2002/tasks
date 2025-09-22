@@ -128,5 +128,18 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
+
+    //Now there are two scenarios, 1 find if there's a negative number, 2 do something different if no negative number
+
+    const FindNegative = 0;
+
+    if (FindNegative === -1){
+        //Do something
+    }
+    else {
+        //Do something else
+    }
+
+    //There's more to do at the end but I need to start here.
     return [];
 }
