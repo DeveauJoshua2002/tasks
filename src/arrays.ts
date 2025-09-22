@@ -59,7 +59,13 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return [];
+    //Find any string that ends with ? and remove them
+    const NoQuest = messages.filter(
+        (msg: string) => !msg.endsWith("?") //Opposite of startsWith()
+    );
+    return NoQuest.map((value : string) =>
+        value.endsWith("!") ? value.toUpperCase() : value //If message ends with ! Uppercase string, else leave message
+);
 };
 
 /**
@@ -67,7 +73,9 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    return 0;
+    //Need to filter less then 4
+    const ShortWords = words < 4; //Still in progress need to think
+    return ShortWords.length; //Should be end result, still need to debug and think
 }
 
 /**
