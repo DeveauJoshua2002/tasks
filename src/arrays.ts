@@ -105,15 +105,17 @@ export function makeMath(addends: number[]): string {
         return "0=0";
     }
 
-    //First need to resize array into one value
+    //Found .reduce() to reduce the array into one value summation : https://www.geeksforgeeks.org/javascript/javascript-array-reduce-method/
+    const summation = addends.reduce(
+        (current : number, summation : number) => current + summation,
+        0 //Start at 0 for current
+    );
 
-    const summation = 0;
+    //Found a join method where I can add in + : https://www.geeksforgeeks.org/python/js-equivalent-to-python-join/
+    const equation = addends.join("+");
 
-    //Next need to have the right hand side with "+" values
-
-    const equation = 0;
-
-    return 'summation=equation'; //Something like this but this will obviously change
+    //Add both summation and equation into one big string
+    return '${summation}=%{equation}';
 }
 
 /**
