@@ -100,6 +100,10 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
+    //Ok first things first if array is empty output 0=0 which should be easy
+    if (addends.length === 0){
+        return "0=0";
+    }
     return "";
 }
 
