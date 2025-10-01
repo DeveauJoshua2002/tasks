@@ -82,7 +82,30 @@ export function toShortForm(question: Question): string {
  * Check the unit tests for more examples of what this looks like!
  */
 export function toMarkdown(question: Question): string {
-    return "";
+    /* 
+    Found an example:
+
+    `# Colors
+Which of these is a color?
+- red
+- apple
+- firetruck`
+    */
+
+    //Need to start with base string
+
+    //Start with # then space then name, Use newline and start with question body
+    let markdown = `# ${question.name}\n${question.body}`
+
+    if (question.type === "multiple_choice_question"){ //If question is multiple choice
+        //.map() to create new array that starts with '-' in front
+        const OptionArrays = question.options.map((option: string) => `- ${option}`);
+
+        //Use .join to create a single string with \n seperating each (Thus creating new lines)
+        markdown += "\n" + OptionArrays.join("\n");
+    }
+
+    return markdown; //Return result
 }
 
 /**
