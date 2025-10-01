@@ -169,5 +169,12 @@ export function mergeQuestion(
     contentQuestion: Question,
     { points }: { points: number }
 ): Question {
-    return contentQuestion;
+    //Copy content question
+    return {...contentQuestion,
+        //Overwrite specific properties as stated (id, name, points)
+        id,
+        name,
+        points, 
+        published: false //Set published to false
+        };
 }
