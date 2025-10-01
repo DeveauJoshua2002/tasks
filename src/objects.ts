@@ -134,8 +134,7 @@ export function publishQuestion(question: Question): Question {
 export function duplicateQuestion(id: number, oldQuestion: Question): Question {
     return {...oldQuestion,
         id: id,
-        body: "",
-        name: 'Copy of Question 1',
+        name: `Copy of ${oldQuestion.name}`, //Add "Copy of" in front of oldQuestion
         published: false //Resetting to false
     };
 }
@@ -148,7 +147,12 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
  * Check out the subsection about "Nested Fields" for more information.
  */
 export function addOption(question: Question, newOption: string): Question {
-    return question;
+    //Looking at nested field subsection quite helpful
+
+    return {...question, //Copy all the top level properties
+        //overwrite options array, first copy original options array
+        options: [...question.options, newOption] //Lastly add 'newOption' at the end
+    };
 }
 
 /**
