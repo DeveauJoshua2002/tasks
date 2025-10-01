@@ -31,9 +31,9 @@ export function makeBlankQuestion(
  * HINT: Look up the `trim` and `toLowerCase` functions.
  */
 export function isCorrect(question: Question, answer: string): boolean {
-    const lowercaseAnswers = answer.trim().toLowerCase(); //Remove whitespace & convert to lowercase
-    const lowercasePotential = question.expected.trim().toLowerCase(); //Do the same
-    return lowercaseAnswers === lowercasePotential;
+    const lowercaseAnswers = answer.trim().toLowerCase(); //Remove whitespace & convert to lowercase for user's answer
+    const lowercaseQuestion = question.expected.trim().toLowerCase(); //Do the same for the question
+    return lowercaseAnswers === lowercaseQuestion; //Check if two strings are the same
 }
 
 /**
@@ -43,7 +43,13 @@ export function isCorrect(question: Question, answer: string): boolean {
  * be exactly one of the options.
  */
 export function isValid(question: Question, answer: string): boolean {
-    return false;
+    if (question.type === "short_answer_question"){ 
+        return true; //Return valid for this case
+    }
+    else if () {
+        //Need to include something here
+    }
+    return false; //If neither return false
 }
 
 /**
