@@ -113,7 +113,7 @@ Which of these is a color?
  * `newName`.
  */
 export function renameQuestion(question: Question, newName: string): Question {
-    return question;
+    return {...question, name: newName}; //Use ... as shown in Chapter 3
 }
 
 /**
