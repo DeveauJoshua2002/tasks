@@ -132,7 +132,12 @@ export function publishQuestion(question: Question): Question {
  * The `published` field should be reset to false.
  */
 export function duplicateQuestion(id: number, oldQuestion: Question): Question {
-    return oldQuestion;
+    return {...oldQuestion,
+        id: id,
+        body: "",
+        name: 'Copy of Question 1',
+        published: false //Resetting to false
+    };
 }
 
 /**
