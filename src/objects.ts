@@ -46,8 +46,8 @@ export function isValid(question: Question, answer: string): boolean {
     if (question.type === "short_answer_question"){ 
         return true; //Return valid for this case
     }
-    else if () {
-        //Need to include something here
+    else if (question.type === "multiple_choice_question") {
+        return question.options.includes(answer); //Check to see if it's one of the options
     }
     return false; //If neither return false
 }
@@ -59,7 +59,9 @@ export function isValid(question: Question, answer: string): boolean {
  * name "My First Question" would become "9: My First Q".
  */
 export function toShortForm(question: Question): string {
-    return "";
+    //We are only returning a statement
+    //question.id gets id and place beginning of sting, then : , finally use slice to get first 10 characters
+    return `${question.id}: ${question.name.slice(0,10)}`;
 }
 
 /**
