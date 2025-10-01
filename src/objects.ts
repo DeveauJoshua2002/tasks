@@ -1,3 +1,4 @@
+import { setTokenSourceMapRange } from "typescript";
 import { Question, QuestionType } from "./interfaces/question";
 
 /**
@@ -10,7 +11,16 @@ export function makeBlankQuestion(
     name: string,
     type: QuestionType
 ): Question {
-    return {};
+    return {
+        id: id, //Return the types specified earlier
+        name: name,
+        type: type,
+        body: "", //Empty strings
+        expected: "",
+        options: [], //Empty list
+        points: 1, //Return what is asked
+        published: false,
+    };
 }
 
 /**
@@ -21,7 +31,9 @@ export function makeBlankQuestion(
  * HINT: Look up the `trim` and `toLowerCase` functions.
  */
 export function isCorrect(question: Question, answer: string): boolean {
-    return false;
+    const lowercaseAnswers = answer.trim().toLowerCase(); //Remove whitespace & convert to lowercase
+    const lowercasePotential = question.expected.trim().toLowerCase(); //Do the same
+    return lowercaseAnswers === lowercasePotential;
 }
 
 /**
