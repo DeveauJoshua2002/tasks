@@ -29,7 +29,10 @@ export function findQuestion(
     questions: Question[],
     id: number
 ): Question | null {
-    return null;
+    //Use .find() to search to find 'id'
+    const FoundQuestion = questions.find((question: Question) => question.id === id);
+    //If no value is found return null
+    return FoundQuestion ?? null;
 }
 
 /**
@@ -38,7 +41,9 @@ export function findQuestion(
  * Hint: use filter
  */
 export function removeQuestion(questions: Question[], id: number): Question[] {
-    return [];
+    //Hint says user .filter
+    //Use .filter() to only return if question doesn't contain 'id'
+    return questions.filter((question: Question) => question.id !== id);
 }
 
 /***
