@@ -6,7 +6,8 @@ import { Question, QuestionType } from "./interfaces/question";
  * that are `published`.
  */
 export function getPublishedQuestions(questions: Question[]): Question[] {
-    return [];
+    //Use .filter() to return new array
+    return questions.filter((question: Question) => question.published); //Return only 'published' questions
 }
 
 /**
@@ -15,6 +16,7 @@ export function getPublishedQuestions(questions: Question[]): Question[] {
  * `expected`, and an empty array for its `options`.
  */
 export function getNonEmptyQuestions(questions: Question[]): Question[] {
+    //Do the same .filter() but comply with the new requierments
     return [];
 }
 
