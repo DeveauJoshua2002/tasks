@@ -17,7 +17,8 @@ export function getPublishedQuestions(questions: Question[]): Question[] {
  */
 export function getNonEmptyQuestions(questions: Question[]): Question[] {
     //Do the same .filter() but comply with the new requierments
-    return [];
+    //Body can't be empty, Expected can't be empy, options array can't be empty (Or 0 in this case)
+    return questions.filter((question: Question) => question.body !== "" || question.expected !== "" || question.options.length > 0);
 }
 
 /***
