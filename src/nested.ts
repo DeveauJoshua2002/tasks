@@ -62,7 +62,11 @@ export function getNames(questions: Question[]): string[] {
  * making the `text` an empty string, and using false for both `submitted` and `correct`.
  */
 export function makeAnswers(questions: Question[]): Answer[] {
-    return [];
+    return questions.map((question: Question) => ({questionId: question.id,
+        text: "",
+        submitted: false,
+        correct: false
+    }));
 }
 
 /***
@@ -81,12 +85,34 @@ export function publishAll(questions: Question[]): Question[] {
  * you defined in the `objects.ts` file.
  * Hint: as usual, do not modify the input questions array
  */
+
+//For refrence makeblankquestion()
+
+/*export function makeBlankQuestion(
+    id: number,
+    name: string,
+    type: QuestionType
+): Question {
+    return {
+        id: id, //Return the types specified earlier
+        name: name,
+        type: type,
+        body: "", //Empty strings
+        expected: "",
+        options: [], //Empty list
+        points: 1, //Return what is asked
+        published: false,
+    };
+} */
 export function addNewQuestion(
     questions: Question[],
     id: number,
     name: string,
     type: QuestionType
 ): Question[] {
+    //Psuedo code
+    //Some_value = makeblankquestion()
+    //[...question,makeblankquestion()] //In this case 2nd mbq() could be some_value
     return [];
 }
 
