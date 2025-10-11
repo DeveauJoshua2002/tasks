@@ -127,7 +127,11 @@ export function renameQuestionById(
     targetId: number,
     newName: string
 ): Question[] {
-    return [];
+    //This question requires .map()
+    return questions.map((question: Question) =>
+        //Need stuff, all things equal except targetID
+        //If target ID name == newName
+    );
 }
 
 /**
