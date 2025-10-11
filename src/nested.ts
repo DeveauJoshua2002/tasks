@@ -156,5 +156,16 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ): Question[] {
+    //Ok a lot going on I think writing out psuedo code and understanding the steps is critical
+
+    /**
+     All questions are the same except for targetId (Kind of like last question)
+     If targetID the option array should have a new element
+
+     If targetOptionIndex = -1 then new option needs to be and end of list,
+     else it should "replace" existing element at targetOptionIndex
+
+     I will definetly need to use the ... operator, at least for targetOptionIndex and likely other places
+     */
     return [];
 }
