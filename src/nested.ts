@@ -131,6 +131,10 @@ export function renameQuestionById(
     return questions.map((question: Question) =>
         //Need stuff, all things equal except targetID
         //If target ID name == newName
+
+        //If question id = target ID name = newName, else it should be the same question
+        //Also uses the ... operator to copy question
+        question.id === targetId ? {...question, name: newName} : question
     );
 }
 
