@@ -167,5 +167,23 @@ export function editOption(
 
      I will definetly need to use the ... operator, at least for targetOptionIndex and likely other places
      */
-    return [];
+    return questions.map((question : Question) => {
+
+        if(question.id != targetId) { //If question does not equal the target id just return the question
+            return question;
+        }
+
+        const modquestion = targetOptionIndex === -1 
+            ? [...question.options, newOption] //Add new option at the end if targetOptionindex === -1
+
+            //Reminder edit option paramaters: targetOptionIndex: number, newOption: string
+            : question.options.map((option : string, index : number) => //Create a new array from existing options
+                index === targetOptionIndex ? newOption : option //If index = targetOptionIndex return newOption otherwise return just the option
+        );
+
+        //Return the question copy with modified questions
+        return {...question, options : modquestion}
+
+    });
+    
 }
