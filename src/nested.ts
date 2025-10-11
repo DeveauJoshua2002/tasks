@@ -53,7 +53,7 @@ export function removeQuestion(questions: Question[], id: number): Question[] {
  */
 export function getNames(questions: Question[]): string[] {
     //Since we are not modifying the input array I need to use .map()
-    return [];
+    return questions.map((question: Question) => question.name);
 }
 
 /**
@@ -71,7 +71,8 @@ export function makeAnswers(questions: Question[]): Answer[] {
  * Hint: as usual, do not modify the input questions array
  */
 export function publishAll(questions: Question[]): Question[] {
-    return [];
+    //Use .map() once again to not modify the input
+    return questions.map(());
 }
 
 /***
