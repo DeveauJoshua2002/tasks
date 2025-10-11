@@ -72,7 +72,7 @@ export function makeAnswers(questions: Question[]): Answer[] {
  */
 export function publishAll(questions: Question[]): Question[] {
     //Use .map() once again to not modify the input
-    return questions.map((question: Question) => ({...question}));
+    return questions.map((question: Question) => ({...question, published: true}));
 }
 
 /***
