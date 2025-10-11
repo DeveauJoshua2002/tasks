@@ -1,5 +1,6 @@
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
+import { makeBlankQuestion } from "./objects";
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
@@ -110,10 +111,8 @@ export function addNewQuestion(
     name: string,
     type: QuestionType
 ): Question[] {
-    //Psuedo code
-    //Some_value = makeblankquestion()
-    //[...question,makeblankquestion()] //In this case 2nd mbq() could be some_value
-    return [];
+    const blank_question = makeBlankQuestion(id,name,type);
+    return [...questions, blank_question]; //Used ... and inserted blank_question at end of array
 }
 
 /***
