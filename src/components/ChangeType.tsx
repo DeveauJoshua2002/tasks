@@ -8,5 +8,9 @@ export function ChangeType(): React.JSX.Element {
     //Also for useState it needs to be 'QuestionType' not string
     const[type, SetType] = useState<QuestionType>("short_answer_question");
 
-    return <div>Change Type</div>;
+    function TypeToggle(): void { //Created controller function
+        //Add something in here
+    }
+
+    return <div>Change Type</div>; //Return statment needs button click & other stuff
 }
