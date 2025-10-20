@@ -2,13 +2,17 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
 export function RevealAnswer(): React.JSX.Element {
-    const [visible, setVisible] = useState<boolean>(false); //Taken from chapter 4 but set to false
+    const [visible, setVisible] = useState<boolean>(false); //Initially set to false (hidden)
+
+    function flipVisibility(): void { //Used from chapter 4
+        setVisible(!visible); // Controller that will flip the state
+  }
     
     //Need button click code and to showcase 42 only when pressed
     return (
         <div>
-            <Button onClick={() => { console.log("Hello World!")}}>Log Hello World</Button> {/*Code copied from earlier App.tsx */}
-            {visible && <div>42</div>} {/*Display 42 when clicked*/}
+            <Button onClick={flipVisibility}>Reveal the answer</Button> {/*When button is clicked activate the controller*/}
+            {visible && <div>42</div>} {/*Display 42 when clickedR*/}
         </div>
     )
 }
