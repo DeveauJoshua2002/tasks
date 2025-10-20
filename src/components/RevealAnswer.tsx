@@ -7,7 +7,8 @@ export function RevealAnswer(): React.JSX.Element {
     //Need button click code and to showcase 42 only when pressed
     return (
         <div>
-            
+            <Button onClick={() => { console.log("Hello World!")}}>Log Hello World</Button> {/*Code copied from earlier App.tsx */}
+            {visible && <div>Hello!</div>} {/*Code copied from chapter 4 */}
         </div>
     )
 }
