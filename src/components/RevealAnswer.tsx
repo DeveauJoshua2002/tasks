@@ -8,7 +8,7 @@ export function RevealAnswer(): React.JSX.Element {
     return (
         <div>
             <Button onClick={() => { console.log("Hello World!")}}>Log Hello World</Button> {/*Code copied from earlier App.tsx */}
-            {visible && <div>Hello!</div>} {/*Code copied from chapter 4 */}
+            {visible && <div>42</div>} {/*Display 42 when clicked*/}
         </div>
     )
 }
