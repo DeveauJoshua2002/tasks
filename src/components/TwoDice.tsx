@@ -20,15 +20,25 @@ export function TwoDice(): React.JSX.Element {
     const [left_dice, set_Left] = useState<number>(2);
     const [right_dice, set_Right] = useState<number>(4);
 
+    //Create 2 functions for rolling each dice
+
+    function roll_left(): void {
+        set_Left(d6)
+    }
+
+    function roll_right(): void {
+        set_Right(d6)
+    }
+
     //Creating a basic structure. (None of these are finished yet)
     return (
         <div>
             {/*Need Die value */}
-            <span data-testid="left-die">{}</span>
-            <span data-testid="right-die">{}</span>
-            {/*Need Roll x Button for each */}
-            <Button onClick={TwoDice}>Roll Left</Button> 
-            <Button onClick={TwoDice}>Roll Right</Button>
+            <span data-testid="left-die">{left_dice}</span>
+            <span data-testid="right-die">{right_dice}</span>
+            {/*Need Roll Button for each */}
+            <Button onClick={roll_left}>Roll Left</Button> 
+            <Button onClick={roll_right}>Roll Right</Button>
         </div>
     );
 }
