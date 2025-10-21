@@ -15,6 +15,8 @@ export function ChangeType(): React.JSX.Element {
 
     return (
         <div>
+            {/*Same type of logic. If short return short answer, else return multiple choice */}
+            <span>{type === "short_answer_question" ? "Short Answer" : "Multiple Choice"}</span>
             <Button onClick={TypeToggle}>Change Type</Button> {/*Need button labeled 'Change Type' */}
         </div>    
     )
