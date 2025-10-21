@@ -12,5 +12,16 @@ export function d6(): number {
 }
 
 export function TwoDice(): React.JSX.Element {
-    return <div>Two Dice</div>;
+
+    //Creating a basic structure. (None of these are finished yet)
+    return (
+        <div>
+            {/*Need Die value */}
+            <span data-testid="left-die">{}</span>
+            <span data-testid="right-die">{}</span>
+            {/*Need Roll x Button for each */}
+            <Button onClick={TwoDice}>Roll Left</Button> 
+            <Button onClick={TwoDice}>Roll Right</Button>
+        </div>
+    );
 }
