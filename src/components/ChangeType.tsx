@@ -9,7 +9,8 @@ export function ChangeType(): React.JSX.Element {
     const[type, SetType] = useState<QuestionType>("short_answer_question");
 
     function TypeToggle(): void { //Created controller function
-        SetType(type); //In progress
+        //Logic: If type = short give multiple, if it's not short (then it must be multiple) give short
+        SetType(type === "short_answer_question" ? "multiple_choice_question" : "short_answer_question");
     }
 
     return (
