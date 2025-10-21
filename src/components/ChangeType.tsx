@@ -9,8 +9,12 @@ export function ChangeType(): React.JSX.Element {
     const[type, SetType] = useState<QuestionType>("short_answer_question");
 
     function TypeToggle(): void { //Created controller function
-        //Add something in here
+        SetType(type); //In progress
     }
 
-    return <div>Change Type</div>; //Return statment needs button click & other stuff
+    return (
+        <div>
+            <Button onClick={TypeToggle}>Change Type</Button> {/*Need button labeled 'Change Type' */}
+        </div>    
+    )
 }
