@@ -32,17 +32,20 @@ export function TwoDice(): React.JSX.Element {
 
     //Creating a basic structure. (None of these are finished yet)
     return (
+        //Create Seperate Div just to display answers
         <div>
             {/*Need Die value */}
             <span data-testid="left-die">{left_dice}</span>
             <span data-testid="right-die">{right_dice}</span>
             
-            {/*Created a seperate div */}
             <div>
                 {/*Need Roll Button for each */}
-            <Button onClick={roll_left}>Roll Left</Button> 
-            <Button onClick={roll_right}>Roll Right</Button>
+                <Button onClick={roll_left}>Roll Left</Button> 
+                <Button onClick={roll_right}>Roll Right</Button>
+                {left_dice === right_dice && left_dice === 1 && <div>Lose</div>} {/*Snake Eyes, showcase lose on the bottom */}
+                {left_dice === right_dice && left_dice !== 1 && <div>Win</div>} {/*Winning condition, showcase win on the bottom */}
             </div>
+            
         </div>
     );
 }
