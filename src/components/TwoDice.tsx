@@ -36,7 +36,8 @@ export function TwoDice(): React.JSX.Element {
             {/*Need Die value */}
             <span data-testid="left-die">{left_dice}</span>
             <span data-testid="right-die">{right_dice}</span>
-            {/*Need Roll Button for each */}
+            
+            {/*Created a seperate div */}
             <div>
                 {/*Need Roll Button for each */}
             <Button onClick={roll_left}>Roll Left</Button> 
