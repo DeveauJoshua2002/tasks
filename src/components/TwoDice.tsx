@@ -13,6 +13,13 @@ export function d6(): number {
 
 export function TwoDice(): React.JSX.Element {
 
+    //Used Counter.tsx code as a base
+
+    //const [value, setValue] = useState<number>(0);
+    //Need to set some values (They both have to be different at first)
+    const [left_dice, set_Left] = useState<number>(2);
+    const [right_dice, set_Right] = useState<number>(4);
+
     //Creating a basic structure. (None of these are finished yet)
     return (
         <div>
