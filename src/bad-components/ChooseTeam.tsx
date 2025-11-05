@@ -14,7 +14,8 @@ export function ChooseTeam(): React.JSX.Element {
     const [allOptions, setAllOptions] = useState<string[]>(PEOPLE);
     const [team, setTeam] = useState<string[]>([]);
 
-    function chooseMember() {
+    //Forgot I needed to change function to allow newMember
+    function chooseMember(newMember: string) {
         
         if (!team.includes(newMember)) {
             //Ok this seems to be the problem the .push
@@ -27,8 +28,8 @@ export function ChooseTeam(): React.JSX.Element {
     }
 
     function clearTeam() {
-        
-        team = [];
+        //Now when this function is called, it should just set the state to an empty array
+        setTeam([]);
         
     }
 
@@ -40,7 +41,10 @@ export function ChooseTeam(): React.JSX.Element {
                     {allOptions.map((option: string) => (
                         <div key={option} style={{ marginBottom: "4px" }}>
                             Add{" "}
-                            <Button onClick={chooseMember} size="sm">
+                            {/*I was getting errors, forgot now I needed to
+                            Pass the 'option' (aka name) to chooseMember
+                            Previously it was doing the default mouse click which was giving me errors */}
+                            <Button onClick={() => chooseMember(option)} size="sm">
                                 {option}
                             </Button>
                         </div>
