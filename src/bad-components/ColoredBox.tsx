@@ -4,6 +4,12 @@ import { Button } from "react-bootstrap";
 export const COLORS = ["red", "blue", "green"];
 const DEFAULT_COLOR_INDEX = 0;
 
+//Define properties for change colors. (Just like with doublehalf)
+interface ChangeColorProps {
+    colorIndex: number;
+    setColorIndex: (newIndex: number) => void;
+}
+
 function ChangeColor(): React.JSX.Element {
     const [colorIndex, setColorIndex] = useState<number>(DEFAULT_COLOR_INDEX);
     return (
