@@ -39,7 +39,7 @@ function ColorPreview({colorIndex}: ColorPreviewProps): React.JSX.Element {
             style={{
                 width: "50px",
                 height: "50px",
-                backgroundColor: COLORS[DEFAULT_COLOR_INDEX],
+                backgroundColor: COLORS[colorIndex],
                 display: "inline-block",
                 verticalAlign: "bottom",
                 marginLeft: "5px",
@@ -50,15 +50,18 @@ function ColorPreview({colorIndex}: ColorPreviewProps): React.JSX.Element {
 
 export function ColoredBox(): React.JSX.Element { //Parent
     //Move to the Parent component
+    //Default color index should only be called here
+    //Everywhere else needs to be replaced with colorIndex
     const [colorIndex, setColorIndex] = useState<number>(DEFAULT_COLOR_INDEX);
 
     return (
         <div>
             <h3>Colored Box</h3>
-            <span>The current color is: {COLORS[DEFAULT_COLOR_INDEX]}</span>
+            <span>The current color is: {COLORS[colorIndex]}</span>
             <div>
-                <ChangeColor></ChangeColor>
-                <ColorPreview></ColorPreview>
+                {/*Set the values for the children. (Just like doublehalf) */}
+                <ChangeColor colorIndex={colorIndex} setColorIndex={setColorIndex}></ChangeColor>
+                <ColorPreview colorIndex={colorIndex}></ColorPreview>
             </div>
         </div>
     );
