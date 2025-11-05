@@ -10,8 +10,9 @@ interface ChangeColorProps {
     setColorIndex: (newIndex: number) => void;
 }
 
-function ChangeColor(): React.JSX.Element {
-    const [colorIndex, setColorIndex] = useState<number>(DEFAULT_COLOR_INDEX);
+//Update funtion
+function ChangeColor({colorIndex, setColorIndex}: ChangeColorProps): React.JSX.Element {
+    //Delete the useState here, it's moved to the parent function
     return (
         <Button
             onClick={() => {
@@ -22,6 +23,7 @@ function ChangeColor(): React.JSX.Element {
         </Button>
     );
 }
+
 
 function ColorPreview(): React.JSX.Element {
     return (
@@ -39,7 +41,10 @@ function ColorPreview(): React.JSX.Element {
     );
 }
 
-export function ColoredBox(): React.JSX.Element {
+export function ColoredBox(): React.JSX.Element { //Parent
+    //Move to the Parent component
+    const [colorIndex, setColorIndex] = useState<number>(DEFAULT_COLOR_INDEX);
+
     return (
         <div>
             <h3>Colored Box</h3>
