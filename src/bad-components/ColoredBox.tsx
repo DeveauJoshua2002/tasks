@@ -24,8 +24,15 @@ function ChangeColor({colorIndex, setColorIndex}: ChangeColorProps): React.JSX.E
     );
 }
 
+//I just decided to make another interface
+//ColorPreview just displays the color, it doesn't need to change it
 
-function ColorPreview(): React.JSX.Element {
+//So ColorPreview does not need setColorIndex for any reason
+interface ColorPreviewProps {
+    colorIndex: number;
+}
+
+function ColorPreview({colorIndex}: ColorPreviewProps): React.JSX.Element {
     return (
         <div
             data-testid="colored-box"
