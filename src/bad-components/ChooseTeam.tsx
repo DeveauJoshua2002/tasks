@@ -11,7 +11,8 @@ const PEOPLE = [
 ];
 
 export function ChooseTeam(): React.JSX.Element {
-    const [allOptions, setAllOptions] = useState<string[]>(PEOPLE);
+    //When I compiled it complained about setAllOptions so I got rid of it
+    const [allOptions] = useState<string[]>(PEOPLE);
     const [team, setTeam] = useState<string[]>([]);
 
     //Forgot I needed to change function to allow newMember
@@ -44,7 +45,9 @@ export function ChooseTeam(): React.JSX.Element {
                             {/*I was getting errors, forgot now I needed to
                             Pass the 'option' (aka name) to chooseMember
                             Previously it was doing the default mouse click which was giving me errors */}
-                            <Button onClick={() => chooseMember(option)} size="sm">
+
+                            {/*I'm dumb I forgot about the correct syntax. Now it should be correct */}
+                            <Button onClick={() => {chooseMember(option)}} size="sm">
                                 {option}
                             </Button>
                         </div>
