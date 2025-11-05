@@ -15,17 +15,21 @@ export function ChooseTeam(): React.JSX.Element {
     const [team, setTeam] = useState<string[]>([]);
 
     function chooseMember() {
-        /*
+        
         if (!team.includes(newMember)) {
-            team.push(newMember);
+            //Ok this seems to be the problem the .push
+            //team.push(newMember);
+
+            //instead (from the texbook) we need to update the state's immutability
+            setTeam([...team, newMember]);
         }
-        */
+        
     }
 
     function clearTeam() {
-        /*
+        
         team = [];
-        */
+        
     }
 
     return (
