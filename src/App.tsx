@@ -61,7 +61,7 @@ function App(): React.JSX.Element {
                 automatically reload. Hello World. This is Joshua Deveau
             </p>
             <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
+            <DoubleHalf></DoubleHalf>
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
